@@ -3,16 +3,15 @@ import CardPokemon from '@components/CardPokemon'
 import { useEffect, useState } from 'react'
 
 const Index = () => {
-  const [ data, setData ] = useState({})
-  
-  useEffect( async () => {
+  const [data, setData] = useState({})
+
+  useEffect(async () => {
     let list = await fetch('https://pokeapi.co/api/v2/pokemon')
     list = await list.json()
-    let url = list.results[0].url
+    const url = list.results[0].url
     let pokemon = await fetch(url)
     pokemon = await pokemon.json()
     setData(pokemon)
-
   }, [])
 
   return (
@@ -27,6 +26,6 @@ const Index = () => {
       <CardPokemon pokemon={data} />
     </div>
   </>
-)
+  )
 }
 export default Index

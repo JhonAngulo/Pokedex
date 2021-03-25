@@ -2,8 +2,6 @@ import React from 'react'
 import Badge from '@components/Badge'
 
 const CardPokemon = ({ pokemon }) => {
-
-
   if (!Object.keys(pokemon).length) {
     return 'loading'
   }
@@ -17,10 +15,10 @@ const CardPokemon = ({ pokemon }) => {
           <img src={sprites.front_default} alt=""/>
         </figure>
       </div>
-      
+
       <div className='card-pokemon__details'>
         <h3 className='card-pokemon__details--name'>{`#${id} ${name.toUpperCase()}`}</h3>
-        
+
         <div>
           <p className='card-pokemon__details--subtitle'>Types: </p>{
           types.map((item, i) => (

@@ -4,11 +4,11 @@ const APP_NAME = 'Pokédex'
 const APP_DESCRIPTION = 'PWA App Pokédex'
 
 export default class extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps (ctx) {
     return await Document.getInitialProps(ctx)
   }
 
-  render() {
+  render () {
     return (
       <Html lang='en' dir='ltr'>
         <Head>

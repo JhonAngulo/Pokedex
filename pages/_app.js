@@ -1,7 +1,7 @@
-import "@styles/globals.scss"
-import Layout from "@containers/Layout"
+import '@styles/globals.scss'
+import Layout from '@containers/Layout'
 
-function MyApp({ Component, pageProps }) {
+function MyApp ({ Component, pageProps }) {
   return (
     <Layout>
       <Component {...pageProps} />
