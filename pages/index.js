@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { fetchCharacters } from '../src/store/actions/characterAction'
+import { getPokemons } from '../src/store/actions/characterAction'
 
 import Head from 'next/head'
 import ContainerList from '@containers/ContainerListPokemons'
@@ -14,7 +14,7 @@ const Index = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(fetchCharacters())
+    dispatch(getPokemons())
   }, [])
 
   useEffect(async () => {

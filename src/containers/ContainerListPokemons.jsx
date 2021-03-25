@@ -8,7 +8,7 @@ const ContainerListPokemons = () => {
   }, [list])
   return (
     <div>
-      {
+      {/* {
         list.map((item) => {
           return (
             <p key={`list-${item.name}`}>
@@ -16,7 +16,7 @@ const ContainerListPokemons = () => {
             </p>
           )
         })
-      }
+      } */}
     </div>
   )
 }
