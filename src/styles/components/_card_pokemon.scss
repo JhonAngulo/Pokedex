@@ -1,0 +1,58 @@
+.card-pokemon {
+  width: 400px;
+  height: 500px;
+  padding: 20px;
+  background-color: #bd0f34;
+  border: 8px solid #951828;
+  border-radius: 10px;
+  @include shadow;
+
+  &__imagen {
+    margin: 0 auto;
+    width: 280px;
+    height: 220px;
+    border-radius: 10px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%, 0 76%);
+    background-color: #dedede;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > figure {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      margin-top: -20px;
+      width: 200px;
+      height: 140px;
+      border-radius: 10px;
+      background-color: #f1f2d3;
+      -webkit-box-shadow: 1px -1px 0px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 1px -1px 0px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 1px -1px 0px 0px rgba(0, 0, 0, 0.75);
+    }
+  }
+
+  &__details {
+    margin: 0 auto;
+    width: 280px;
+    height: 210px;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    background-color: #03212d;
+    color: #ffffff;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+
+    &--name {
+      text-align: center;
+      letter-spacing: 1.2px;
+    }
+
+    &--subtitle {
+      margin-bottom: 4px;
+    }
+  }
+}

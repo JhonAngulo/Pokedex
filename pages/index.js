@@ -1,14 +1,32 @@
 import Head from 'next/head'
+import CardPokemon from '@components/CardPokemon'
+import { useEffect, useState } from 'react'
 
+const Index = () => {
+  const [ data, setData ] = useState({})
+  
+  useEffect( async () => {
+    let list = await fetch('https://pokeapi.co/api/v2/pokemon')
+    list = await list.json()
+    let url = list.results[0].url
+    let pokemon = await fetch(url)
+    pokemon = await pokemon.json()
+    setData(pokemon)
 
-const Index = () => (
+  }, [])
+
+  return (
   <>
     <Head>
-      <title>Mi App | Inicio</title>
+      <title>Pokédex</title>
     </Head>
-    <h1>Bienvenido!</h1>
-    <h1>Next PWA SASS template</h1>
+    <div>
+      <h1>Bienvenido!</h1>
+    </div>
+    <div>
+      <CardPokemon pokemon={data} />
+    </div>
   </>
 )
-
+}
 export default Index
