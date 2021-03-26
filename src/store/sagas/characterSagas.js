@@ -3,13 +3,11 @@ import { call, put, takeLatest } from 'redux-saga/effects'
 import * as types from '../types'
 import Api from '../api'
 
-function * fetchList ({ limit }) {
+function * fetchList ({ limit, offset }) {
   try {
-    console.log('runnnn', limit)
-
     const characters = []
 
-    const list = yield call(Api.getCharacters, { limit })
+    const list = yield call(Api.getCharacters, { limit, offset })
 
     for (const item of list.results) {
       const pokemon = {}
@@ -29,8 +27,14 @@ function * fetchList ({ limit }) {
   }
 }
 
+function * selected ({ id }) {
+  yield put({ type: types.CHARACTERS_SELECTED_CHANGE, payload: id })
+}
+
 function * charactersSaga () {
   yield takeLatest(types.CHARACTERS_GET, fetchList)
+
+  yield takeLatest(types.CHARACTERS_SELECTED, selected)
 }
 
 export default charactersSaga

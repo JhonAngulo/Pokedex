@@ -20,7 +20,7 @@ const CardPokemon = () => {
         loading: false
       })
     }
-  }, [list])
+  }, [list, selected])
 
   if (data.loading) {
     return 'loading'

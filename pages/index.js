@@ -21,9 +21,7 @@ const Index = () => {
     </Head>
     <div className='layout__nav'>
       <SearchBar />
-      <div className='layout__carrusel'>
-        <ContainerList />
-      </div>
+      <ContainerList />
     </div>
     <div>
       <Pokedex />
