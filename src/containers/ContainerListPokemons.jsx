@@ -1,23 +1,25 @@
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
+import CardPokemon from '@components/CardPokemon'
+
 const ContainerListPokemons = () => {
   const { list } = useSelector(state => state.characters)
 
   useEffect(() => {
+    console.log(list)
   }, [list])
+
   return (
-    <div>
-      {/* {
+    <>
+      {
         list.map((item) => {
           return (
-            <p key={`list-${item.name}`}>
-              {item.name}
-            </p>
+            <CardPokemon key={item.id} {...item} />
           )
         })
-      } */}
-    </div>
+      }
+    </>
   )
 }
 

@@ -10,7 +10,13 @@ html {
 }
 
 body {
+  overflow: hidden;
   text-align: center;
   color: $primary_color;
   background-color: $background_color;
+}
+
+#__next {
+  width: 100vw;
+  height: 100vh;
 }

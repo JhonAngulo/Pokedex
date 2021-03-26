@@ -4,14 +4,14 @@ import { getPokemons } from '../src/store/actions/characterAction'
 
 import Head from 'next/head'
 import ContainerList from '@containers/ContainerListPokemons'
-import CardPokemon from '@components/CardPokemon'
+import Pokedex from '@components/Pokedex'
 import SearchBar from '@components/SearchBar'
 
 const Index = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getPokemons({ limit: 15 }))
+    dispatch(getPokemons({ limit: 30 }))
   }, [])
 
   return (
@@ -19,12 +19,14 @@ const Index = () => {
     <Head>
       <title>Pokédex</title>
     </Head>
-    <div>
+    <div className='layout__nav'>
       <SearchBar />
-      <ContainerList />
+      <div className='layout__carrusel'>
+        <ContainerList />
+      </div>
     </div>
     <div>
-      <CardPokemon />
+      <Pokedex />
     </div>
   </>
   )
