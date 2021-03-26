@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { getPokemons } from '../src/store/actions/characterAction'
 
@@ -8,23 +8,10 @@ import CardPokemon from '@components/CardPokemon'
 import SearchBar from '@components/SearchBar'
 
 const Index = () => {
-  const [list, setList] = useState([])
-  const [data, setData] = useState({})
-
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getPokemons())
-  }, [])
-
-  useEffect(async () => {
-    let list = await fetch('https://pokeapi.co/api/v2/pokemon?limit=15')
-    list = await list.json()
-    setList(list.results)
-    const url = list.results[0].url
-    let pokemon = await fetch(url)
-    pokemon = await pokemon.json()
-    setData(pokemon)
+    dispatch(getPokemons({ limit: 15 }))
   }, [])
 
   return (
@@ -34,10 +21,10 @@ const Index = () => {
     </Head>
     <div>
       <SearchBar />
-      <ContainerList list={list} />
+      <ContainerList />
     </div>
     <div>
-      <CardPokemon pokemon={data} />
+      <CardPokemon />
     </div>
   </>
   )
