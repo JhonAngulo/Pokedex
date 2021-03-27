@@ -23,7 +23,7 @@ const ContainerListPokemons = () => {
   })
 
   const debounceHandleNextPage = useCallback(debounce(
-    () => getPlus({ offset: list.length }), 300
+    () => getPlus({ offset: Object.keys(list).length }), 300
   ), [list])
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const ContainerListPokemons = () => {
       {
         list.map((item) => {
           return (
-            <CardPokemon key={item.id} {...item} handleClick={handleSelect}/>
+            <CardPokemon key={`list-${item.id}`} {...item} handleClick={handleSelect}/>
           )
         })
       }

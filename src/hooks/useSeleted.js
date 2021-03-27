@@ -1,19 +1,21 @@
 import { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { selectedPokemon } from '../store/actions/characterAction'
 
 function useSelected () {
-  const [selected, setSelected] = useState(1)
+  const { list } = useSelector(state => state.characters)
+  const [selected, setSelected] = useState({})
   const dispatch = useDispatch()
 
   const handleSelect = ({ id }) => {
-    if (id !== selected) {
-      setSelected(id)
+    if (id !== selected.id) {
+      const filter = list.filter((item) => item.id === id)[0]
+      setSelected(filter)
     }
   }
 
   useEffect(() => {
-    dispatch(selectedPokemon({ id: selected }))
+    dispatch(selectedPokemon(selected))
   }, [selected])
 
   return {

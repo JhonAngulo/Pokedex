@@ -2,7 +2,7 @@ import * as types from '../types'
 
 const initialState = {
   list: [],
-  selected: 1,
+  selected: {},
   error: null
 }
 
@@ -20,9 +20,10 @@ const characterReducer = (state = initialState, action) => {
         selected: action.payload,
         error: null
       }
-    case types.CHARACTERS_ERROR:
+    case types.SET_SEARCH_ERROR:
       return {
         ...state,
+        selected: {},
         error: action.payload
       }
     default:

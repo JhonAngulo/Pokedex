@@ -5,7 +5,7 @@ function useGetCharacters () {
   const dispatch = useDispatch()
 
   const getPlus = ({ offset }) => {
-    dispatch(getPokemons({ limit: 12, offset: offset }))
+    dispatch(getPokemons({ limit: 15, offset: offset }))
   }
 
   return getPlus

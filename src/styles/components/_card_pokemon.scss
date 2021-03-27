@@ -1,17 +1,17 @@
 .card-pokemon {
   width: 140px;
   height: 160px;
-  background-color: rgba($color: #FFFFFF, $alpha: 0.1);
+  background-color: rgba($color: $white_color, $alpha: 0.1);
   border-radius: 10px;
   cursor: pointer;
   transition: 500ms background-color ease;
   @include shadow;
 
   &:hover {
-    background-color: rgba($color: #ffffff, $alpha: 0.4);
+    background-color: rgba($color: $white_color, $alpha: 0.4);
   }
 
   &__name {
-    color: white;
+    color: $white_color;
   }
 }

@@ -6,7 +6,12 @@ export const getPokemons = ({ limit, offset = 0 }) => ({
   offset
 })
 
-export const selectedPokemon = ({ id }) => ({
+export const selectedPokemon = (pokemon) => ({
   type: types.CHARACTERS_SELECTED,
-  id
+  pokemon
+})
+
+export const searchError = ({ message }) => ({
+  type: types.SEARCH_ERROR,
+  message
 })

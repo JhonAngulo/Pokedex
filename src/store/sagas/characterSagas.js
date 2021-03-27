@@ -11,7 +11,8 @@ function * fetchList ({ limit, offset }) {
 
     for (const item of list.results) {
       const pokemon = {}
-      const data = yield call(Api.getCharacter, { url: item.url })
+      const url = item.url.substring(0, item.url.length - 1)
+      const data = yield call(Api.getCharacter, { url: url })
       pokemon.name = data.name
       pokemon.id = data.id
       pokemon.abilities = data.abilities
@@ -27,14 +28,20 @@ function * fetchList ({ limit, offset }) {
   }
 }
 
-function * selected ({ id }) {
-  yield put({ type: types.CHARACTERS_SELECTED_CHANGE, payload: id })
+function * selected ({ pokemon }) {
+  yield put({ type: types.CHARACTERS_SELECTED_CHANGE, payload: pokemon })
+}
+
+function * setError ({ message }) {
+  yield put({ type: types.SET_SEARCH_ERROR, payload: message })
 }
 
 function * charactersSaga () {
   yield takeLatest(types.CHARACTERS_GET, fetchList)
 
   yield takeLatest(types.CHARACTERS_SELECTED, selected)
+
+  yield takeLatest(types.SEARCH_ERROR, setError)
 }
 
 export default charactersSaga
