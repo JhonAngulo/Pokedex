@@ -17,7 +17,7 @@ const Index = () => {
   return (
   <>
     <Head>
-      <title>Pokédex</title>
+      <title>JM | Pokédex</title>
     </Head>
     <div className='layout__nav'>
       <SearchBar />
