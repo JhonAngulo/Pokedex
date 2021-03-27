@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
-const APP_NAME = 'JM-Pokédex'
-const APP_DESCRIPTION = 'Pokédex Jhon Angulo'
+const APP_NAME = 'Pokédex Jhon Angulo'
+const APP_DESCRIPTION = 'this is jhon angulo\'s pokedex PWA'
 
 export default class extends Document {
   static async getInitialProps (ctx) {
