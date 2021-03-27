@@ -1,7 +1,7 @@
 # Technical Test | Pokédex
 
-to see the project you can go to:
-[ir al sitio](pokedex-jhonangulo.vercel.app/)
+
+[to see the project you can go to:](https://pokedex-jhonangulo.vercel.app/)
 
 ![Main Dashboard](./mockup/design.png)
 
