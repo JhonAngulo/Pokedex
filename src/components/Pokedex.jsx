@@ -14,7 +14,7 @@ const CardPokemon = () => {
     <div className='pokedex'>
       <div className='pokedex__circles' >
         <div className='pokedex__circles--hero'></div>
-        <div className='pokedex__circles--item'></div>
+        <div className='pokedex__circles--item red'></div>
         <div className='pokedex__circles--item'></div>
         <div className='pokedex__circles--item'></div>
       </div>
