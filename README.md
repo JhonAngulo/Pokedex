@@ -3,7 +3,7 @@
 to see the project you can go to:
 [ir al sitio](pokedex-jhonangulo.vercel.app/)
 
-![Main Dashboard](./mockup/desing.png)
+![Main Dashboard](./mockup/design.png)
 
 ## Instructions to run locally
 
